@@ -1,9 +1,25 @@
-/**
- * Configure your Gatsby site with this file.
- *
- * See: https://www.gatsbyjs.org/docs/gatsby-config/
- */
-
 module.exports = {
-  /* Your site config here */
-}
+  siteMetadata: {
+      title: 'Wordpress Gatsby',
+      subtitle: `Fetch Data From Local WP Install`,
+  },
+  plugins: [
+      'gatsby-plugin-react-helmet',
+      {
+          resolve: "gatsby-source-wordpress",
+          
+          options: {
+
+              baseUrl: "localhost/wordpress/",
+
+              protocol: "http",
+
+              hostingWPCOM: false,
+
+              useACF: true,
+
+              verboseOutput: true
+          }
+      }
+  ],
+};
