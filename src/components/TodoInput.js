@@ -77,29 +77,29 @@ handleSubmitAdd = event => {
   
   render() {
     return ( 
+      <div className="taskManager">
       <div>
-        <div>
         <form onSubmit={this.handleSubmitAdd}>
-          <label>
-            Task Name:
-            <input type="text" name="title" onChange={this.handleChangeAdd} />
-          </label>
-          <button type="submit">Add</button>
+            <input className="addInput" type="text" name="title" onChange={this.handleChangeAdd} placeholder="Insérer la description de la nouvelle tâche"/>
+          <button className="btn btn-primary" type="submit">
+            Ajouter
+          </button>
         </form>
       </div>
-        <div>
-        <form onSubmit={this.handleSubmitDelete}>
-          <label>
-            Task ID:
-            <input type="text" name="id" onChange={this.handleChangeDelete} />
-          </label>
-          <button type="submit">Delete</button>
-        </form>
-      </div>
-        <ul>{this.state.post_titles.map(post_title => 
-        <li>{post_title.post_title}</li>)}
+      <div>
+        <ul>
+          {this.state.post_status.map(post_status => (
+            <div className="list" key="id">{post_status.post_status}</div>
+          ))}
         </ul>
+        <form onSubmit={this.handleSubmitDelete}>
+            <input className="deleteInput" type="text" name="id" onChange={this.handleChangeDelete} placeholder="Insérer le ID de la tâche à enlever"/>
+          <button className="deleteTask" type="submit">
+            Enlever
+          </button>
+        </form>
       </div>
+    </div>
     )
   }
 }

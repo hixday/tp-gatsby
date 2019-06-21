@@ -9,7 +9,7 @@ import TodoInput from '../components/TodoInput'
 
 const IndexPage = () => (
   <div>
-    <div className="todo">
+    <div className="toDo">
       <Link>
         <h1>Task Manager</h1>
        
